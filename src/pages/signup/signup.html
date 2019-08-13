@@ -1,0 +1,102 @@
+
+<ion-content padding class="animated fadeIn login auth-page">
+  <div class="login-content">
+
+    <!-- Logo -->
+    <div padding text-center>
+      <div class="logo"></div>
+      <h2 ion-text class="text-primary">
+        <strong>GARIYASI</strong> 
+      </h2>
+    </div>
+
+    <!-- Login form -->
+    <form class="list-form" #frm="ngForm" >
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="person" item-start class="text-primary"></ion-icon>
+          USER NAME
+        </ion-label>
+        <ion-input type="text" name="username" ngModel #username="ngModel"  required pattern="[a-zA-Z][a-zA-Z]+" ></ion-input> 
+      </ion-item>
+
+      <div *ngIf="username?.touched">
+          <div *ngIf="username.errors?.required">
+            Name is required
+          </div>
+          <div *ngIf="username.errors?.pattern">invalid name</div>
+      </div>
+
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="home" item-start class="text-primary"></ion-icon>
+          BRANCH NAME
+        </ion-label>
+        <ion-input type="text" name="branchname" ngModel #branchname="ngModel"   required></ion-input>
+      </ion-item>
+
+      <div *ngIf="branchname?.touched">
+          <div *ngIf="branchname.errors?.required">
+            Branchname is required
+          </div>
+        </div>
+
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="mail" item-start class="text-primary"></ion-icon>
+          EMAIL
+        </ion-label>
+        <ion-input type="email" name="mailid" ngModel #mailid="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></ion-input>
+      </ion-item>
+
+
+      <div *ngIf="mailid?.touched">
+          <div *ngIf="mailid.errors?.required">
+            Email is required
+          </div>
+          <div *ngIf="mailid.errors?.pattern">invalid email</div>
+      </div>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="lock" item-start class="text-primary"></ion-icon>
+        PASSWORD
+        </ion-label>
+        <ion-input type="password" name="password" ngModel #password="ngModel" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="phone-portrait" item-start class="text-primary"></ion-icon>
+        MOBILE NUMBER
+        </ion-label>
+        <ion-input type="number" name="phonenumber" ngModel #phonenumber="ngModel" required pattern="[0-9]*" maxlength=10 minlength=10></ion-input>
+      </ion-item>
+
+      <div *ngIf="phonenumber?.touched" class="alert alert-danger">
+          <div *ngIf="phonenumber.errors?.required">
+            Mobile Number is required
+          </div>
+          <div *ngIf="phonenumber.errors?.pattern ||phonenumber.errors?.minlength || phonenumber.errors?.maxlength">
+            Invalid Mobile Number
+          </div>
+        </div>
+
+    </form>
+
+    <div margin-top>
+      <button ion-button block color="primary" tappable (click)="register(frm)"  [disabled]="frm.invalid">
+        SIGN UP
+      </button>
+      <!-- <p text-center ion-text color="secondary">Or Sign Up with:</p> -->
+    </div>
+    <!-- Other links -->
+    <div text-center margin-top>
+      <span ion-text color="primary" tappable (click)="login()">Already have an account ? </span>
+    </div>
+
+  </div>
+</ion-content>
+

@@ -1,0 +1,22 @@
+
+  <ion-header>
+      <!-- tool bar top -->
+      <ion-toolbar color="primary">
+          <!-- menu toggle button on left -->
+        <button ion-button menuToggle left>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-toolbar>
+    </ion-header>
+  
+  <ion-content padding class="auth-page">
+      <div *ngIf="!scanning">
+          <!-- <div *ngIf="!newscreen"> -->
+      <ion-list>
+      <img src="../assets/imgs/scantag.png">
+    </ion-list>
+    <ion-list>
+    <h1 class="position">SCAN TAG  <ion-spinner name="ios-small"></ion-spinner></h1>  
+    </ion-list>
+  </div>
+    </ion-content>

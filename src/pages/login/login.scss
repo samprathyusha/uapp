@@ -1,0 +1,50 @@
+page-login,
+.login {
+  .auth-page {
+    background: url("../assets/imgs/bg.jpg") no-repeat;
+    content: "";
+    background-size: cover;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: 0;
+  }
+  .auth-page .scroll-content .login-content .logo {
+    width: 60px;
+    height: 60px;
+    margin: 20px auto 0;
+    border-radius: 10%;
+    background: url("../assets/imgs/ic_gariyasi.png") no-repeat;
+    background-size: 100%;
+  }
+
+  .auth-page .scroll-content .login-content .list-form {
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .auth-page .scroll-content .login-content .list-form ion-item {
+    background: none;
+    padding: 0;
+  }
+
+  .auth-page .scroll-content .login-content .list-form ion-item:first-child {
+    border-top: none;
+  }
+
+  .auth-page .scroll-content .login-content .list-form ion-item:after {
+    display: none;
+  }
+
+  .auth-page .scroll-content .login-content .list-form ion-item ion-label {
+    font-size: 1em;
+    color: #488aff;
+  }
+
+  .auth-page .scroll-content .login-content .list-form ion-item input {
+    color: #488aff;
+  }
+  button { margin-top: 30px;}
+}

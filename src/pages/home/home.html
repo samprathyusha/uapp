@@ -1,0 +1,23 @@
+<ion-header>
+  <!-- tool bar top -->
+  <ion-toolbar color="primary">
+<ion-title> SCAN QR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding  class="auth-page">  
+<div class="login-content">
+  <form class="input-items"  #frm="ngForm">
+    <ion-list>
+      <ion-item class="inplab">
+        <ion-input type="text" name="barcode" [(ngModel)]="barcode" required  disabled="true"></ion-input>
+        <button ion-button clear item-end (click)="scanBarcode()">
+          <ion-icon name="barcode" item-start class="text-primary"></ion-icon>
+          SCAN QR
+        </button>
+      </ion-item>
+    </ion-list>
+    
+  </form>
+  </div>
+</ion-content>

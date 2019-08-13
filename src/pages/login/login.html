@@ -1,0 +1,49 @@
+
+<ion-content padding class="animated fadeIn login auth-page">
+  <div class="login-content">
+
+    <!-- Logo -->
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <div class="logo"></div>
+      <h2 ion-text class="text-primary">
+        <strong>GARIYASI</strong> 
+      </h2>
+    </div>
+
+    <!-- Login form -->
+    <form class="list-form" #frm="ngForm">
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="phone-portrait" item-start class="text-primary"></ion-icon>
+          MOBILE NUMBER
+        </ion-label>
+        <ion-input type="number" maxlength=10 minlength=10 [(ngModel)]="phonenumber" name="phonenumber" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="lock" item-start class="text-primary"></ion-icon>
+          PASSWORD
+        </ion-label>
+        <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
+      </ion-item>
+    </form>
+
+    <!-- <p text-right ion-text color="primary" tappable (click)="forgotPass()">Forgot Password?</p> -->
+
+    <div>
+      <button ion-button icon-start block color="primary" tappable (click)="login()" [disabled]="frm.invalid">
+        <ion-icon name="log-in"></ion-icon>
+        SIGN IN
+      </button>
+
+    </div>
+
+
+
+    <div text-center margin-top>
+      <span ion-text color="primary" tappable (click)="  createAccount()"> Don't have account ? </span>
+    </div>
+
+  </div>
+</ion-content>
